@@ -1,0 +1,1 @@
+Helper to spot unlocalized strings your android app by using your default strings.xml template and filling in random values.

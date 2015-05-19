@@ -1,4 +1,4 @@
-package com.exozet;
+package net.kibotu;
 
 import org.jdom2.Document;
 import org.jdom2.Element;

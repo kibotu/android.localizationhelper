@@ -1,4 +1,4 @@
-package com.exozet;
+package net.kibotu;
 
 import java.math.BigInteger;
 import java.security.SecureRandom;
