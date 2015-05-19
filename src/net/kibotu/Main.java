@@ -12,10 +12,16 @@ public class Main {
 
     public static void main(final String... args) throws Exception {
 
-        final String pathname = "assets/strings.xml";
-        final File source = new File(pathname);
+        String inputFilePath;
+        inputFilePath = args[0] != null ? args[0] : "assets/strings.xml";
+
+        String outputFilePath = inputFilePath;
+        if(args[1] != null)
+            outputFilePath = args[1];
+
+        final File source = new File(inputFilePath);
         if (!source.exists()) {
-            System.out.println("'" + pathname + " ' File doesn't exist.");
+            System.out.println("'" + inputFilePath + " ' File doesn't exist.");
             return;
         }
 
@@ -34,7 +40,7 @@ public class Main {
                 element.setText(generator.nextSessionId().substring(10).toUpperCase());
 
             // store
-            final FileWriter writer = new FileWriter(pathname);
+            final FileWriter writer = new FileWriter(outputFilePath);
             fmt.output(doc, writer);
             writer.flush();
             writer.close();
